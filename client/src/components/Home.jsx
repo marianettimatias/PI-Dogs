@@ -9,6 +9,7 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs) //me traigo el estado de dogs
+  
 
   useEffect(() => {
     dispatch(getDogs());
