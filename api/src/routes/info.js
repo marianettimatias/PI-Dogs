@@ -14,8 +14,8 @@ const getApi = async () => {
             weight: dogs.weight.metric,
             life_span: dogs.life_span,
             image: dogs.image.url,
-            temperaments: dogs.temperament
-            // ?dogs.temperament:'La raza no tiene temperamento asociado'
+            temperaments: dogs.temperament?dogs.temperament:'La raza no tiene temperamento asociado'
+           
         }
     });
     return api_info;

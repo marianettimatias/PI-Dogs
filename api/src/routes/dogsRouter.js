@@ -13,11 +13,16 @@ dogsRouter.get('/', async (req, res) => {
 
     let dogs_info =  dogs.map(info => {
         return {
+            id:info.id,
             name: info.name,
-            image: info.image,
+            image: info.image?info.image:`https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
             temperaments: info.temperaments,
-            weight: info.weight,
-            height: info.height,
+            weight:info.weight,
+            weight_max: info.weight.slice(4),
+            weight_min:info.weight.slice(0,2),
+            height:info.height,
+            height_max: info.height.slice(4),
+            height_min:info.height.slice(0,2),
             life_span: info.life_span
         }
     })
@@ -45,10 +50,10 @@ dogsRouter.get('/:id', async (req, res) => {
             return {
                 id: info.id,
                 name: info.name,
-                image: info.image.url,
+                image: info.image?info.image:`https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
+                height: info.height,
                 temperaments: info.temperaments,
-                height: info.height.metric,
-                weight: info.weight.metric,
+                weight: info.weight,
                 life_span: info.life_span
             }
         })
