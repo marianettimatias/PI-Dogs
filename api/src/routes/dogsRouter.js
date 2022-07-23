@@ -18,11 +18,11 @@ dogsRouter.get('/', async (req, res) => {
             image: info.image?info.image:`https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
             temperaments: info.temperaments,
             weight:info.weight,
-            weight_max: info.weight.slice(4),
-            weight_min:info.weight.slice(0,2),
+            weight_min:info.weight.slice(0,2).trim(),
+            weight_max: info.weight.slice(4).trim(),
             height:info.height,
-            height_max: info.height.slice(4),
-            height_min:info.height.slice(0,2),
+            height_min:info.height.slice(0,2).trim(),
+            height_max: info.height.slice(4).trim(),
             life_span: info.life_span
         }
     })
