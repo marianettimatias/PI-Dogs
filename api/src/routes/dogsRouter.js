@@ -11,23 +11,24 @@ dogsRouter.get('/', async (req, res) => {
     const { name } = req.query;
     let dogs = await getData();
 
-    let dogs_info =  dogs.map(info => {
+    let dogs_info = dogs.map(info => {
         return {
-            id:info.id,
+            id: info.id,
             name: info.name,
-            image: info.image?info.image:`https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
+            image: info.image ? info.image : `https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
             temperaments: info.temperaments,
-            weight:info.weight,
-            weight_min:info.weight.slice(0,2).trim(),
+            weight: info.weight,
+            weight_min: info.weight.slice(0, 2).trim(),
             weight_max: info.weight.slice(4).trim(),
-            height:info.height,
-            height_min:info.height.slice(0,2).trim(),
+            height: info.height,
+            height_min: info.height.slice(0, 2).trim(),
             height_max: info.height.slice(4).trim(),
-            life_span: info.life_span
+            life_span: info.life_span,
+            createdInDb: info.createdInDb
         }
     })
-    
-   
+
+
     try {
         if (name) {
             let dogs_name = await dogs_info.filter(e => e.name.toLowerCase().includes(name.toLocaleLowerCase()))
@@ -50,7 +51,7 @@ dogsRouter.get('/:id', async (req, res) => {
             return {
                 id: info.id,
                 name: info.name,
-                image: info.image?info.image:`https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
+                image: info.image ? info.image : `https://media.a24.com/p/d0f9662f172019cf39a28dfd4a217d8f/adjuntos/296/imagenes/008/984/0008984000/1200x675/smart/602d72d546bd3266540774jpg.jpg`,
                 height: info.height,
                 temperaments: info.temperaments,
                 weight: info.weight,
@@ -70,26 +71,30 @@ dogsRouter.get('/:id', async (req, res) => {
 
 dogsRouter.post('/', async (req, res) => {
 
-    const { name, height, weight, image, life_span, temperaments } = req.body;
+    const { name, height, height_min, height_max, weight, weight_min, weight_max, image, life_span, temperaments } = req.body;
     console.log(req.body)
 
-    
-        const create_dog = await Dog.create({
-            name,
-            height,
-            weight,
-            image,
-            life_span,
-            
-        })
 
-        const temp_db = await Temperament.findAll({
-            where: { name: temperaments },
-           
-        })
-        await create_dog.addTemperament(temp_db);
-        res.send('Raza creada correctamente')
-   
+    const create_dog = await Dog.create({
+        name,
+        height,
+        height_min,
+        height_max,
+        weight,
+        weight_min,
+        weight_max,
+        image,
+        life_span,
+
+    })
+
+    const temp_db = await Temperament.findAll({
+        where: { name: temperaments },
+
+    })
+    await create_dog.addTemperament(temp_db);
+    res.send('Raza creada correctamente')
+
 
 })
 

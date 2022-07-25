@@ -8,7 +8,6 @@ export default function DogCard({ id, name, image, temperaments, weight }) {
 
   } else {
     var temp_api = temperaments
-
   }
   return (
     <div>
