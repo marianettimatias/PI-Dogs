@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { getDogs, sortByWeight, filterByCreated, sortByName } from '../actions';
 import DogCard from './DogCard'
 import Paginado from "./Paginado";
+import SearchBar from "./SearchBar";
 
 export default function Home() {
 
@@ -40,15 +41,15 @@ export default function Home() {
     setOrden(`Ordenado ${e.target.value}`)
   }
 
-  function handleByName(e){
+  function handleByName(e) {
     e.preventDefault();
     dispatch(sortByName(e.target.value))
     setCurrentPage(1);
     setOrden(`Ordenado ${e.target.value}`)
   }
 
-  function handleCreate(e){
-     e.preventDefault();
+  function handleCreate(e) {
+    e.preventDefault();
     dispatch(filterByCreated(e.target.value))
     setCurrentPage(1);
   }
@@ -57,10 +58,13 @@ export default function Home() {
 
     <div>
       <h1>Dogs!</h1>
+      
       <Link to='/dogs'>Crea tu raza!</Link>
+
       <button onClick={(e) => { handleClick(e) }}>
         Todas las razas
       </button>
+      <SearchBar />
       <div>
         <h2>Temperamento</h2>
         <select>
@@ -84,7 +88,7 @@ export default function Home() {
       </div>
       <div>
         <h2>Razas: creadas/existentes</h2>
-        <select onChange={(e)=>{ handleCreate (e)}}>
+        <select onChange={(e) => { handleCreate(e) }}>
           <option value="Todas">Todas</option>
           <option value="createdInDb">Creadas</option>
           <option value="Existentes">Existentes</option>

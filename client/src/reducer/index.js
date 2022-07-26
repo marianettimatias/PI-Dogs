@@ -2,16 +2,36 @@
 const initialState = {
     dogs: [],
     alldogs: [],
+    temperaments:[]
 }
 
 function rootReducer(state = initialState, action) {
     switch (action.type) {
+
         case 'GET_DOGS':
             return {
                 ...state,
                 dogs: action.payload,
                 alldogs: action.payload
             }
+
+        case 'GET_DOGS_NAME':
+            return {
+                ...state,
+                dogs: action.payload
+            }
+
+        case 'GET_TEMPERAMENTS':
+            return{
+                ...state,
+                temperaments: action.payload
+            }
+
+        case 'POST_DOG':
+            return {
+                ...state
+            }
+
         case 'SORT_BY_WEIGHT':
 
             let filter_dogs2 = state.dogs.filter(e => !e.weight.includes('NaN'))
