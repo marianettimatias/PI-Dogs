@@ -87,6 +87,7 @@ export default function PostDog() {
                 temperaments: [...input.temperaments, e.target.value]
             })
         }
+        console.log(input)
     }
 
     function handleSubmit(e) {
@@ -231,7 +232,14 @@ export default function PostDog() {
                         }
                     </ul>
                     <p>* Campos obligatorios</p>
-                    <button type="submit" >Crear</button>
+                    {
+                        input.name===''||input.height_min===''||input.height_max===''||input.weight_min===''||input.weight_max===''||input.name===''||input.life_span_min===''||
+                        input.life_span_max===''||input.temperaments.length===0?
+                        <button type="submit" disabled={true} >Faltan datos por completar</button>:
+                        <button type="submit">Crear Raza</button>
+                    }
+                    
+                    
 
                 </div>
 
