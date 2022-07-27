@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import { getDogs, sortByWeight, filterByCreated, sortByName } from '../actions';
+import { getDogs, sortByWeight, filterByCreated, sortByName, getTemperaments, filterByTemperaments } from '../actions';
 import DogCard from './DogCard'
 import Paginado from "./Paginado";
 import SearchBar from "./SearchBar";
@@ -11,7 +11,9 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs) //me traigo el estado de dogs
-  
+  const temps = useSelector((state) => state.temperaments)
+
+
 
   const [currentPage, setCurrentPage] = useState(1); //estado con paginba actual y estado que setea pagina actual
   const [dogsPerPage, setDogsPerPage] = useState(8); //seteo personajes por página
@@ -28,6 +30,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getDogs());
+    dispatch(getTemperaments());
   }, [dispatch])
 
   function handleClick(e) {
@@ -55,6 +58,12 @@ export default function Home() {
     setCurrentPage(1);
   }
 
+  function handleTemperaments(e) {
+    e.preventDefault();
+    dispatch(filterByTemperaments(e.target.value))
+    setCurrentPage(1);
+  }
+
   return (
 
     <div>
@@ -68,9 +77,13 @@ export default function Home() {
       <SearchBar />
       <div>
         <h2>Temperamento</h2>
-        <select>
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
+        <select onChange={handleTemperaments}>
+          <option value="All">Todos</option>
+          {
+            temps.map(temp => {
+              return <option key={temp.id} value={temp.name}> {temp.name} </option>
+            })
+          }
         </select>
       </div>
       <div>
@@ -101,18 +114,18 @@ export default function Home() {
       <div>
         {
           currentDogs && currentDogs.map((info) => {
-            
+
             return (
-              
-                <DogCard
-                  id={info.id}
-                  key={info.id}
-                  name={info.name}
-                  image={info.image}
-                  temperaments={info.temperaments}
-                  weight={info.weight}
-                  
-               />
+
+              <DogCard
+                id={info.id}
+                key={info.id}
+                name={info.name}
+                image={info.image}
+                temperaments={info.temperaments}
+                weight={info.weight}
+
+              />
 
             )
 

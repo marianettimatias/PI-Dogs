@@ -110,6 +110,14 @@ function rootReducer(state = initialState, action) {
                 dogs: action.payload === 'Todas' ? state.alldogs : filter_db
             }
 
+        case 'FILTER_BY_TEMPERAMENTS':
+
+            const filter_temp = action.payload === 'All' ? state.alldogs : state.alldogs.filter(e => e.temperaments.includes(action.payload))
+            
+            return {
+                ...state,
+                dogs: action.payload === 'All' ? state.alldogs : filter_temp
+            }
         default: return state;
     }
 

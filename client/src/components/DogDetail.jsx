@@ -16,7 +16,7 @@ export default function DogDetail() {
 
     useEffect(() => {
         dispatch(getDogDetail(id))
-    }, [dispatch])
+    },)
 
     if (Array.isArray(dog.temperaments)) {
         var temp = dog.temperaments.map(e => e.name).join(', ')
