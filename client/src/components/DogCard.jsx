@@ -15,7 +15,7 @@ export default function DogCard({ id, name, image, temperaments, weight }) {
       <img src={image} alt="Imagen no disponible" />
       <h3>Peso: {weight} kgs</h3>
       <h3>Temperamentos: {temp ? temp : temp_api}</h3>
-      <Link to='/dogs'>Detalles de la Raza</Link>
+      <Link to={'/dogs/'+id}><p>Detalles de la raza</p></Link>
     </div>
   )
 }

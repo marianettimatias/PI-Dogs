@@ -24,8 +24,8 @@ dogsRouter.get('/', async (req, res) => {
             height_min: info.height.slice(0, 2).trim() ? info.height.slice(0, 2).trim() : info.height_min,
             height_max: info.height.slice(4).trim() ? info.height.slice(4).trim() : info.height_max,
             life_span: info.life_span ? info.life_span : info.life_span_min + ' - ' + info.life_span_max,
-            life_span_min: info.life_span.slice(0, 2).trim() ? info.life_span.slice(0, 2).trim() : info.life_span_min,
-            life_span_max: info.life_span.slice(4).trim() ? info.life_span.slice(4).trim() : info.life_span_max,
+            life_span_min: info.life_span.slice(0, 2) ? info.life_span.slice(0, 2) : info.life_span_min,
+            life_span_max: info.life_span.slice(5, 8).trim() ? info.life_span.slice(4).trim() : info.life_span_max.replace('years',''),
             createdInDb: info.createdInDb
         }
     })
@@ -49,7 +49,7 @@ dogsRouter.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
         let dogs = await getData();
-       
+
         let dogs_info = await dogs.map(info => {
             return {
                 id: info.id,
@@ -62,14 +62,14 @@ dogsRouter.get('/:id', async (req, res) => {
                 height: info.height ? info.height : info.height_min + ' - ' + info.height_max,
                 height_min: info.height.slice(0, 2).trim() ? info.height.slice(0, 2).trim() : info.height_min,
                 height_max: info.height.slice(4).trim() ? info.height.slice(4).trim() : info.height_max,
-                life_span: info.life_span ? info.life_span : info.life_span_min + ' - ' + info.life_span_max,
+                life_span: info.life_span.replace(' years','') ? info.life_span.replace(' years','') : info.life_span_min + ' - ' + info.life_span_max,
                 life_span_min: info.life_span.slice(0, 2).trim() ? info.life_span.slice(0, 2).trim() : info.life_span_min,
                 life_span_max: info.life_span.slice(4).trim() ? info.life_span.slice(4).trim() : info.life_span_max,
                 createdInDb: info.createdInDb
             }
-            
+
         })
-            
+
         let dogs_id = await dogs_info.find(dog => dog.id == id);
         if (dogs_id) {
             res.status(200).send(dogs_id)
@@ -84,7 +84,7 @@ dogsRouter.get('/:id', async (req, res) => {
 dogsRouter.post('/', async (req, res) => {
 
     const { name, height, height_min, height_max, weight, weight_min, weight_max, image, life_span, life_span_min, life_span_max, temperaments } = req.body;
-    
+
     const create_dog = await Dog.create({
         name,
         height,

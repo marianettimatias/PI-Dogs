@@ -11,9 +11,10 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs) //me traigo el estado de dogs
+  
 
   const [currentPage, setCurrentPage] = useState(1); //estado con paginba actual y estado que setea pagina actual
-  const [dogsPerPage, setDogsPerPage] = useState(150); //seteo personajes por página
+  const [dogsPerPage, setDogsPerPage] = useState(8); //seteo personajes por página
   const indexOfLastDog = currentPage * dogsPerPage
   const indexOfFirstDog = indexOfLastDog - dogsPerPage
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
@@ -58,7 +59,7 @@ export default function Home() {
 
     <div>
       <h1>Dogs!</h1>
-      
+
       <Link to='/dogs'>Crea tu raza!</Link>
 
       <button onClick={(e) => { handleClick(e) }}>
@@ -100,16 +101,18 @@ export default function Home() {
       <div>
         {
           currentDogs && currentDogs.map((info) => {
-
+            
             return (
-
-              <DogCard
-                key={info.id}
-                name={info.name}
-                image={info.image}
-                temperaments={info.temperaments}
-                weight={info.weight}
-              />
+              
+                <DogCard
+                  id={info.id}
+                  key={info.id}
+                  name={info.name}
+                  image={info.image}
+                  temperaments={info.temperaments}
+                  weight={info.weight}
+                  
+               />
 
             )
 
@@ -125,7 +128,7 @@ export default function Home() {
         />
       </div>
 
-    </div>
+    </div >
   )
 
 }
