@@ -17,9 +17,10 @@ function rootReducer(state = initialState, action) {
             }
 
         case 'GET_DOGS_NAME':
+            
             return {
                 ...state,
-                dogs: action.payload
+                dogs: action.payload.length?action.payload:alert('No existe la raza')
             }
 
         case 'GET_DOG_DETAIL':

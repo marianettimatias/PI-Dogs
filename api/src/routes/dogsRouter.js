@@ -25,7 +25,7 @@ dogsRouter.get('/', async (req, res) => {
             height_max: info.height.slice(4).trim() ? info.height.slice(4).trim() : info.height_max,
             life_span: info.life_span ? info.life_span : info.life_span_min + ' - ' + info.life_span_max,
             life_span_min: info.life_span.slice(0, 2) ? info.life_span.slice(0, 2) : info.life_span_min,
-            life_span_max: info.life_span.slice(5, 8).trim() ? info.life_span.slice(4).trim() : info.life_span_max.replace('years',''),
+            life_span_max: info.life_span.slice(5, 8).trim() ? info.life_span.slice(4).trim() : info.life_span_max.replace('years', ''),
             createdInDb: info.createdInDb
         }
     })
@@ -42,6 +42,7 @@ dogsRouter.get('/', async (req, res) => {
         }
     } catch (e) {
         res.status(404).send('Raza no encontrada');
+
     }
 })
 
@@ -62,7 +63,7 @@ dogsRouter.get('/:id', async (req, res) => {
                 height: info.height ? info.height : info.height_min + ' - ' + info.height_max,
                 height_min: info.height.slice(0, 2).trim() ? info.height.slice(0, 2).trim() : info.height_min,
                 height_max: info.height.slice(4).trim() ? info.height.slice(4).trim() : info.height_max,
-                life_span: info.life_span.replace(' years','') ? info.life_span.replace(' years','') : info.life_span_min + ' - ' + info.life_span_max,
+                life_span: info.life_span.replace(' years', '') ? info.life_span.replace(' years', '') : info.life_span_min + ' - ' + info.life_span_max,
                 life_span_min: info.life_span.slice(0, 2).trim() ? info.life_span.slice(0, 2).trim() : info.life_span_min,
                 life_span_max: info.life_span.slice(4).trim() ? info.life_span.slice(4).trim() : info.life_span_max,
                 createdInDb: info.createdInDb

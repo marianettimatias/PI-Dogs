@@ -87,7 +87,7 @@ export default function PostDog() {
                 temperaments: [...input.temperaments, e.target.value]
             })
         }
-        console.log(input)
+        // console.log(input)
     }
 
     function handleSubmit(e) {
