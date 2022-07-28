@@ -8,7 +8,7 @@ import DogDetail from './components/DogDetail/DogDetail';
 function App() {
   return (
     <div className='fondo'>
-    <div></div>
+    
       <div className="App">
         <Route exact path={'/'} render={() => <LandingPage />} />
         <Route exact path={'/home'} render={() => <Home />} />

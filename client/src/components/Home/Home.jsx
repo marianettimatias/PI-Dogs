@@ -68,13 +68,21 @@ export default function Home() {
   return (
 
     <div >
-      <h1>Dogs!</h1>
-
-      <nav className="container_nav">
-
+      <div className="head">
+        <div className="titulo">
+          <h1 className="h1">Dogs!</h1>
+        </div>
         <div className="searchBar">
           <SearchBar />
         </div>
+        <button onClick={(e) => { handleClick(e) }}>
+          Todas las razas
+        </button>
+        <Link to='/dogs'> <h3> Crea tu raza!</h3></Link>
+
+      </div>
+
+      <nav className="container_nav">
         <div>
           <h3>Filtrar por temperamento</h3>
           <select onChange={handleTemperaments}>
@@ -111,11 +119,9 @@ export default function Home() {
           </select>
         </div>
 
-        <Link to='/dogs'> <h3> Crea tu raza!</h3></Link>
 
-        <button onClick={(e) => { handleClick(e) }}>
-          Todas las razas
-        </button>
+
+
       </nav>
 
       <div className="cards">

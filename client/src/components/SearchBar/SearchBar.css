@@ -1,4 +1,12 @@
-.searchBar{
-    display: flexbox;
-    flex-direction: row;
+.searchBar1{
+    display: inline-flex;
+    align-content: space-around;
+    gap:10px;
+    
+}
+
+.input{
+    width: 150px;
+    margin-right: 10px;
+
 }
