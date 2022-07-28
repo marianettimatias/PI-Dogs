@@ -84,43 +84,44 @@ export default function Home() {
 
       <nav className="container_nav">
         <div>
-          <h3>Filtrar por temperamento</h3>
-          <select onChange={handleTemperaments}>
-            <option value="All">Todos</option>
-            {
-              temps.map(temp => {
-                return <option key={temp.id} value={temp.name}> {temp.name} </option>
-              })
-            }
-          </select>
+          <div className="filter-temps-title">
+            <h3>Filtrar por temperamento</h3>
+          </div>
+          <div className="filter-temps-select">
+            <select className="select-temps" onChange={handleTemperaments}>
+              <option value="All">Todos</option>
+              {
+                temps.map(temp => {
+                  return <option key={temp.id} value={temp.name}> {temp.name} </option>
+                })
+              }
+            </select>
+          </div>
         </div>
-        <div>
+        <div className="sort-name">
           <h3>Ordenar Alfabéticamente</h3>
-          <select onChange={handleByName}>
+          <select className="select-name" onChange={handleByName}>
             <option value="asc">A-Z</option>
             <option value="desc">Z-A</option>
           </select>
         </div>
 
-        <div>
+        <div className="sort-weight">
           <h3>Ordenar por peso</h3>
-          <select onChange={(e) => { handleByWeight(e) }}>
+          <select className="select-weight" onChange={(e) => { handleByWeight(e) }}>
             <option value="asc">Ascendente</option>
             <option value="desc">Descendente</option>
           </select>
         </div>
 
-        <div>
+        <div className="sort-created">
           <h3>Razas: creadas/existentes</h3>
-          <select onChange={(e) => { handleCreate(e) }}>
+          <select className="select-created" onChange={(e) => { handleCreate(e) }}>
             <option value="Todas">Todas</option>
             <option value="createdInDb">Creadas</option>
             <option value="Existentes">Existentes</option>
           </select>
         </div>
-
-
-
 
       </nav>
 

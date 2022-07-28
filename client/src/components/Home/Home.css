@@ -4,13 +4,6 @@
     flex-wrap: wrap;
 }
 
-.container_nav {
-    display: flex;
-    flex-direction: row;
-
-
-}
-
 .head {
     display: flex;
     justify-content: space-around;
@@ -22,6 +15,11 @@
     width: 180px;
     height: 50px;
 
+}
+.h1 {
+    width: 180px;
+    height: 50px;
+    margin: 0px;
 }
 
 .searchBar {
@@ -36,8 +34,35 @@
 
 }
 
-.h1 {
-    width: 180px;
-    height: 50px;
-    margin: 0px;
+.container_nav {
+    display: inline-flex;
+    align-content: space-around;
+    gap:30px;
+    width: 1020px;
+    
+
+}
+.filter-temps-title{
+
+}
+
+.filter-temps-select{
+/* background-color: aquamarine; */
+}
+
+.sort-name{
+/* background-color: yellow; */
+}
+
+.sort-weight{
+/* background-color: chartreuse; */
+}
+
+.sort-created{
+/* background-color: pink; */
+}
+
+.select-temps{
+    
+    width: 150px;
 }
