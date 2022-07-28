@@ -1,4 +1,5 @@
-.App {
+
+ .App {
   text-align: center;
 }
 
@@ -35,4 +36,14 @@
   to {
     transform: rotate(360deg);
   }
+}  
+.fondo {
+  background-image: url(../src/images/bkg.jpg);
+  /* position: absolute; */
+  width: 100vw;
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0px;
+
 }

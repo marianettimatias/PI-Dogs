@@ -2,10 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import { getDogs, sortByWeight, filterByCreated, sortByName, getTemperaments, filterByTemperaments } from '../actions';
-import DogCard from './DogCard'
-import Paginado from "./Paginado";
-import SearchBar from "./SearchBar";
+import { getDogs, sortByWeight, filterByCreated, sortByName, getTemperaments, filterByTemperaments } from '../../actions';
+import DogCard from '../DogCard/DogCard'
+import Paginado from "../Paginado/Paginado";
+import SearchBar from "../SearchBar/SearchBar";
+import './Home.css'
 
 export default function Home() {
 
@@ -66,52 +67,58 @@ export default function Home() {
 
   return (
 
-    <div>
+    <div >
       <h1>Dogs!</h1>
 
-      <Link to='/dogs'>Crea tu raza!</Link>
+      <nav className="container_nav">
 
-      <button onClick={(e) => { handleClick(e) }}>
-        Todas las razas
-      </button>
-      <SearchBar />
-      <div>
-        <h2>Temperamento</h2>
-        <select onChange={handleTemperaments}>
-          <option value="All">Todos</option>
-          {
-            temps.map(temp => {
-              return <option key={temp.id} value={temp.name}> {temp.name} </option>
-            })
-          }
-        </select>
-      </div>
-      <div>
-        <h2>Orden Alfabético</h2>
-        <select onChange={handleByName}>
-          <option value="asc">A-Z</option>
-          <option value="desc">Z-A</option>
-        </select>
-      </div>
-      <div>
-        <h2>Orden por peso</h2>
-        <select onChange={(e) => { handleByWeight(e) }}>
-          <option value="asc">Ascendente</option>
-          <option value="desc">Descendente</option>
-        </select>
-      </div>
-      <div>
-        <h2>Razas: creadas/existentes</h2>
-        <select onChange={(e) => { handleCreate(e) }}>
-          <option value="Todas">Todas</option>
-          <option value="createdInDb">Creadas</option>
-          <option value="Existentes">Existentes</option>
-        </select>
-      </div>
+        <div className="searchBar">
+          <SearchBar />
+        </div>
+        <div>
+          <h3>Filtrar por temperamento</h3>
+          <select onChange={handleTemperaments}>
+            <option value="All">Todos</option>
+            {
+              temps.map(temp => {
+                return <option key={temp.id} value={temp.name}> {temp.name} </option>
+              })
+            }
+          </select>
+        </div>
+        <div>
+          <h3>Ordenar Alfabéticamente</h3>
+          <select onChange={handleByName}>
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+          </select>
+        </div>
 
+        <div>
+          <h3>Ordenar por peso</h3>
+          <select onChange={(e) => { handleByWeight(e) }}>
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+          </select>
+        </div>
 
+        <div>
+          <h3>Razas: creadas/existentes</h3>
+          <select onChange={(e) => { handleCreate(e) }}>
+            <option value="Todas">Todas</option>
+            <option value="createdInDb">Creadas</option>
+            <option value="Existentes">Existentes</option>
+          </select>
+        </div>
 
-      <div>
+        <Link to='/dogs'> <h3> Crea tu raza!</h3></Link>
+
+        <button onClick={(e) => { handleClick(e) }}>
+          Todas las razas
+        </button>
+      </nav>
+
+      <div className="cards">
         {
           currentDogs && currentDogs.map((info) => {
 

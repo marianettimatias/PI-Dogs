@@ -1,0 +1,4 @@
+.searchBar{
+    display: flexbox;
+    flex-direction: row;
+}

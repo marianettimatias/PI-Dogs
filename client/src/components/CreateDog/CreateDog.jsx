@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { postDogs, getTemperaments } from "../actions";
+import { postDogs, getTemperaments } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 
 
