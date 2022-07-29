@@ -7,7 +7,7 @@ const temperamentRouter = Router();
 
 temperamentRouter.get('/', async (req, res) => {
     const data_api = await getApi();
-    const temperaments = data_api.map(info => info.temperaments ? info.temperaments : 'La raza no tiene temperamentos asociados')
+    const temperaments = data_api.map(info => info.temperaments ? info.temperaments : 'Sin temperamento asociado')
 
     const temp = temperaments.join(', ').split(', ').sort()
     // let temps=temp.filter(Boolean)

@@ -14,7 +14,7 @@ const getApi = async () => {
             weight: dogs.weight.metric,
             life_span: dogs.life_span,
             image: dogs.image.url,
-            temperaments: dogs.temperament?dogs.temperament:'La raza no tiene temperamento asociado'
+            temperaments: dogs.temperament?dogs.temperament:'Sin temperamento asociado'
            
         }
     });
@@ -32,17 +32,7 @@ const getdb = async () => {
             },
         }
     })
-    // const data_db= datainfo.map(info=>{
-    //     return {
-    //         name: info.name,
-    //         image: info.image,
-    //         temperament: info.temperaments,
-    //         weight: info.weight,
-    //         height: info.height,
-    //         life_span: info.life_span
-    //     }
-    // })
-    
+      
     return datainfo;
 }
 
