@@ -16,6 +16,7 @@
     height: 50px;
 
 }
+
 .h1 {
     width: 180px;
     height: 50px;
@@ -37,32 +38,13 @@
 .container_nav {
     display: inline-flex;
     align-content: space-around;
-    gap:30px;
-    width: 1020px;
-    
+    gap: 30px;
+    width: 1012px;
 
-}
-.filter-temps-title{
 
 }
 
-.filter-temps-select{
-/* background-color: aquamarine; */
-}
-
-.sort-name{
-/* background-color: yellow; */
-}
-
-.sort-weight{
-/* background-color: chartreuse; */
-}
-
-.sort-created{
-/* background-color: pink; */
-}
-
-.select-temps{
-    
+.select-temps {
     width: 150px;
 }
+

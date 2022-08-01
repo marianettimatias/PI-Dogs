@@ -1,10 +1,10 @@
  .card {
    width: 15em;
-   height: 25em;
+   height: 28em;
    border-radius: 10px;
    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
    overflow: hidden;
-   margin: 2em;
+   margin: 1em;
    text-align: center;
    transition: all 0.25s;
    background-color: rgb(245, 245, 245,0.3);
@@ -39,7 +39,7 @@
  .temperamento {
 
    width: 240px;
-   height: 85px;
+   height: 95px;
    margin-top: 5px;
    margin-bottom: 5px;
 

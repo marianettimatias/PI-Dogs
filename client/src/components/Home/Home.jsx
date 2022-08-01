@@ -147,7 +147,7 @@ export default function Home() {
         }
       </div>
 
-      <div>
+      <div className="paginado">
         <Paginado
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length} // .length porque necesito un valor numerico

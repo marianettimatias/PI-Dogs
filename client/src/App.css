@@ -25,9 +25,7 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+
 
 @keyframes App-logo-spin {
   from {
@@ -39,11 +37,10 @@
 }  
 .fondo {
   background-image: url(../src/images/bkg.jpg);
-  /* position: absolute; */
-  width: 100vw;
-  height: 95vh;
+  width: auto;
+  height: auto;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:contain;
   margin: 0px;
 
 }

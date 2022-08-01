@@ -44,7 +44,7 @@ export function getDogDetail(id) {
 }
 
 export function postDogs(payload) {
-    return async function (dispatch) {
+    return async function () {
         const post_dog = await axios.post('http://localhost:3001/dogs', payload);
         return post_dog;
     }

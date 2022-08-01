@@ -93,7 +93,6 @@ export default function PostDog() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('submit', input)
         dispatch(postDogs(input))
         alert('Raza creada correctamente')
         setInput({
@@ -130,7 +129,7 @@ export default function PostDog() {
                     <input type="text"
                         placeholder="Nombre de la raza "
                         name='name'
-                        value={input.name}
+                        value={input.name.charAt(0).toUpperCase() + input.name.slice(1)}
                         onChange={handleInput}
                     />
                     {input.name === '' ? <p className="ast">*</p> : ''}

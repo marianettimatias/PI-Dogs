@@ -35,14 +35,21 @@ dogsRouter.get('/', async (req, res) => {
         if (name) {
             let dogs_name = await dogs_info.filter(e => e.name.toLowerCase().includes(name.toLocaleLowerCase()))
             if (dogs_name.length) {
+
                 res.status(200).send(dogs_name);
             }
-        } else {
-            res.status(200).send(dogs_info);
-        }
-    } catch (e) {
-        res.status(404).send('Raza no encontrada');
 
+            else {
+                res.send({ e: 'Raza no encontrada' })
+
+            }
+        }
+        else{
+            res.send(dogs_info)
+        }
+
+    } catch (e) {
+        res.status(404).send({ e: 'Raza no encontrada' });
     }
 })
 

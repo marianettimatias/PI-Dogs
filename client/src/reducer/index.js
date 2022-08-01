@@ -17,10 +17,17 @@ function rootReducer(state = initialState, action) {
             }
 
         case 'GET_DOGS_NAME':
-            
-            return {
-                ...state,
-                dogs: action.payload.length?action.payload:alert('No existe la raza')
+            if (!action.payload.e) {
+                return {
+                    ...state,
+                    dogs: action.payload
+                }
+            } else {
+                alert(action.payload.e)
+                return {
+                    ...state,
+                    dogs: state.alldogs
+                }
             }
 
         case 'GET_DOG_DETAIL':
@@ -114,7 +121,7 @@ function rootReducer(state = initialState, action) {
         case 'FILTER_BY_TEMPERAMENTS':
 
             const filter_temp = action.payload === 'All' ? state.alldogs : state.alldogs.filter(e => e.temperaments.includes(action.payload))
-            
+
             return {
                 ...state,
                 dogs: action.payload === 'All' ? state.alldogs : filter_temp
