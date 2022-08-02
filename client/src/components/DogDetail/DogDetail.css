@@ -17,3 +17,9 @@
     width: 240px;
     height: 150px;
 }
+
+.volver-detail{
+   
+    display: flex;
+    justify-content: center;
+}

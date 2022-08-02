@@ -1,3 +1,12 @@
+.titulo{
+    width: 600px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+       text-align: center;
+}
+
 .ast {
     padding-left: 5px;
     color: red;
@@ -20,7 +29,7 @@
     align-content: center;
     align-items: center;
     height: 35px;
-    margin: auto;
+   margin: 0px;
     text-align: end;
 
 }
@@ -71,10 +80,20 @@
 
 .falta{
    
-    padding-left: 150px;
+   display: flex;
+   justify-content: center;
+   
 }
 
 .volver{
-    margin-left: 500px;
+   
+   display: flex;
+   justify-content: center;
     
+}
+
+.list-temps{
+    display:block;
+    text-align: center;
+    margin: 5px;
 }

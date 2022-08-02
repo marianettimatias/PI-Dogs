@@ -1,4 +1,11 @@
+.nav-pag{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+
+}
+
 .btn-pag{
     margin: 2px;
-      
+    cursor: pointer;
 }

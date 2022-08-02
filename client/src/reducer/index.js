@@ -79,7 +79,7 @@ function rootReducer(state = initialState, action) {
             }
 
         case 'SORT_BY_NAME':
-            let sort_name = state.alldogs
+            let sort_name = state.dogs
             let sorted = action.payload === 'asc' ?
                 sort_name.sort(function (a, b) {
                     if (a.name > b.name) {

@@ -1,25 +1,15 @@
-.btn_landing{
-    height: 100%;
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    border: 2px solid #adb5bd;
-    background: #adb5bd;
-  }
-  .btn_landing:hover {
-    background: #fff;
-    color: #adb5bd
-  }
+.landing{
+  
+  display: grid;
+ justify-items: center;
+}
+.btn-landing{
+ 
+  padding-top: 30px;
 
-  .btn_conteiner{
-    
-  }
+}
+.dogs{
+  font-size: 60px;
+}
 
  

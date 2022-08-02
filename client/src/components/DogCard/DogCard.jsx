@@ -13,7 +13,7 @@ export default function DogCard({ id, name, image, temperaments, weight }) {
   return (
     <div >
       <div className="card">
-        <h3 className="titulo">Raza: {name}</h3>
+        <h3 className="titulo-card">Raza: {name}</h3>
         <div>
           <img className="img" src={image} alt="Imagen no disponible" />
         </div>

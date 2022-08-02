@@ -8,7 +8,7 @@ export default function Paginado({ dogsPerPage, allDogs, paginado }) {
         pageNumbers.push(i)
     }
     return (
-        <nav >
+        <nav className="nav-pag" >
             <ul>
                 {
                     pageNumbers && pageNumbers.map(num => ( //mapeo cada uno de los numeros que tengo en pagNumber

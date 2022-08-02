@@ -122,7 +122,7 @@ export default function PostDog() {
 
     return (
         <div>
-            <h1>Crea una nueva Raza!</h1>
+            <h1 className="titulo">Crea una nueva Raza!</h1>
             <form className="form" onSubmit={(e) => { handleSubmit(e) }} >
                 <div className="form-all">
                     <label className="input">Nombre: </label>
@@ -143,9 +143,9 @@ export default function PostDog() {
                         onChange={handleInput}
                     />
                     {input.height_min === '' ? <p className="ast">*</p> : ''}
-                    <div className="error">
-                        {error.height_min && <p>{error.height_min}</p>}
-                    </div>
+
+                    {error.height_min && <p>{error.height_min}</p>}
+
                 </div>
                 <div className="form-all">
                     <label className="input">Altura máxima: </label>
@@ -241,10 +241,12 @@ export default function PostDog() {
                     </div>
                     <div className="temps-list">
                         <ul >
-                            <span>Temperamentos seleccionados: </span>
+                           
+                                <span>Temperamentos seleccionados: </span>
+                            
                             {
                                 input.temperaments.map((e) => {
-                                    return <li value={e} key={e}> {e} <button value={e} onClick={handleDelete} >X</button>  </li>
+                                    return <li className="list-temps" value={e} key={e}> {e} <button value={e} onClick={handleDelete} >X</button>  </li>
                                 })
                             }
                         </ul>

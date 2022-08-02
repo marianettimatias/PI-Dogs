@@ -67,10 +67,10 @@ export default function Home() {
 
   return (
 
-    <div >
+    <div  >
       <div className="head">
-        <div className="titulo">
-          <h1 className="h1">Dogs!</h1>
+        <div className="titulo-head">
+          <h1 >Dogs!</h1>
         </div>
         <div className="searchBar">
           <SearchBar />

@@ -42,7 +42,9 @@ export default function DogDetail() {
                 </div>
 
             }
-            <Link to='/home'><button>Volver al inicio</button></Link>
+            <div className="volver-detail">
+            <Link to='/home'><button  >Volver al inicio</button></Link>
+            </div>
         </div>
 
 
