@@ -143,7 +143,9 @@ export default function PostDog() {
                         onChange={handleInput}
                     />
                     {input.height_min === '' ? <p className="ast">*</p> : ''}
-                    {error.height_min && <p>{error.height_min}</p>}
+                    <div className="error">
+                        {error.height_min && <p>{error.height_min}</p>}
+                    </div>
                 </div>
                 <div className="form-all">
                     <label className="input">Altura máxima: </label>
@@ -154,7 +156,9 @@ export default function PostDog() {
                         onChange={handleInput}
                     />
                     {input.height_max === '' ? <p className="ast">*</p> : ''}
-                    {error.height_max && <p>{error.height_max}</p>}
+                    <div>
+                        {error.height_max && <p>{error.height_max}</p>}
+                    </div>
                 </div>
                 <div className="form-all">
                     <label className="input" >Peso mínimo: </label>
@@ -165,7 +169,9 @@ export default function PostDog() {
                         onChange={handleInput}
                     />
                     {input.weight_min === '' ? <p className="ast">*</p> : ''}
-                    {error.weight_min && <p>{error.weight_min}</p>}
+                    <div>
+                        {error.weight_min && <p>{error.weight_min}</p>}
+                    </div>
                 </div>
                 <div className="form-all">
                     <label className="input" >Peso máximo: </label>
@@ -176,7 +182,9 @@ export default function PostDog() {
                         onChange={handleInput}
                     />
                     {input.weight_max === '' ? <p className="ast">*</p> : ''}
-                    {error.weight_max && <p>{error.weight_max}</p>}
+                    <div>
+                        {error.weight_max && <p>{error.weight_max}</p>}
+                    </div>
                 </div>
                 <div className="form-image">
                     <label className="input-name" >Imagen: </label>
@@ -188,8 +196,9 @@ export default function PostDog() {
                         value={input.image}
                         onChange={handleInput}
                     />
-
-                    {error.image && <p>{error.image}</p>}
+                    <div>
+                        {error.image && <p>{error.image}</p>}
+                    </div>
                 </div>
                 <div className="form-all">
                     <label className="input-life-name">Años de vida (desde): </label>
@@ -231,7 +240,7 @@ export default function PostDog() {
                         <p className="ast">*</p>
                     </div>
                     <div className="temps-list">
-                        <ul>
+                        <ul >
                             <span>Temperamentos seleccionados: </span>
                             {
                                 input.temperaments.map((e) => {
@@ -241,7 +250,7 @@ export default function PostDog() {
                         </ul>
                         <p className="ast">* Campos obligatorios</p>
                     </div>
-                    <div>
+                    <div className="falta">
                         {
                             input.name === '' || input.height_min === '' || input.height_max === '' || input.weight_min === '' || input.weight_max === '' || input.name === '' || input.life_span_min === '' ||
                                 input.life_span_max === '' || input.temperaments.length === 0 ?
@@ -256,8 +265,9 @@ export default function PostDog() {
 
 
             </form>
-
-            <Link to='/home'><button>Volver al inicio</button></Link>
+            <div className="volver">
+                <Link to='/home'><button >Volver al inicio</button></Link>
+            </div>
         </div>
     )
 
