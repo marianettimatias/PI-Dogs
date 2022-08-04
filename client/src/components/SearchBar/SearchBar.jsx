@@ -21,7 +21,7 @@ export default function SearchBar() {
     return (
         <div className="searchBar1">
             <input className="input" type="text" placeholder='Nombre de la raza' value={name} onChange={handleInput} onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)} />
-            <button type="submit" onClick={handleSubmit} > Buscar </button>
+            <button className="btn-search" type="submit" onClick={handleSubmit} > Buscar </button>
         </div>
 
     )

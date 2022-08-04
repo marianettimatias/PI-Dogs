@@ -109,7 +109,7 @@ export default function PostDog() {
             life_span_max: '',
             temperaments: []
         })
-        // history.push('/home')
+
     }
 
     function handleDelete(e) {
@@ -121,108 +121,126 @@ export default function PostDog() {
     }
 
     return (
-        <div>
-            <h1 className="titulo">Crea una nueva Raza!</h1>
-            <form className="form" onSubmit={(e) => { handleSubmit(e) }} >
-                <div className="form-all">
-                    <label className="input">Nombre: </label>
-                    <input type="text"
-                        placeholder="Nombre de la raza "
-                        name='name'
-                        value={input.name.charAt(0).toUpperCase() + input.name.slice(1)}
-                        onChange={handleInput}
-                    />
-                    {input.name === '' ? <p className="ast">*</p> : ''}
-                </div>
-                <div className="form-all">
-                    <label className="input" >Altura mínima: </label>
-                    <input type="text"
-                        name='height_min'
-                        placeholder="centímetros"
-                        value={input.height_min}
-                        onChange={handleInput}
-                    />
-                    {input.height_min === '' ? <p className="ast">*</p> : ''}
 
-                    {error.height_min && <p>{error.height_min}</p>}
-
+        <div >
+            <div className="cont-form">
+                <div className="head-titulo">
+                    <h1 className="titulo">Crea una nueva Raza!</h1>
                 </div>
-                <div className="form-all">
-                    <label className="input">Altura máxima: </label>
-                    <input type="text"
-                        name='height_max'
-                        placeholder="centímetros"
-                        value={input.height_max}
-                        onChange={handleInput}
-                    />
-                    {input.height_max === '' ? <p className="ast">*</p> : ''}
-                    <div>
-                        {error.height_max && <p>{error.height_max}</p>}
-                    </div>
-                </div>
-                <div className="form-all">
-                    <label className="input" >Peso mínimo: </label>
-                    <input type="text"
-                        placeholder="Kgs "
-                        name='weight_min'
-                        value={input.weight_min}
-                        onChange={handleInput}
-                    />
-                    {input.weight_min === '' ? <p className="ast">*</p> : ''}
-                    <div>
-                        {error.weight_min && <p>{error.weight_min}</p>}
-                    </div>
-                </div>
-                <div className="form-all">
-                    <label className="input" >Peso máximo: </label>
-                    <input type="text"
-                        placeholder="Kgs "
-                        name='weight_max'
-                        value={input.weight_max}
-                        onChange={handleInput}
-                    />
-                    {input.weight_max === '' ? <p className="ast">*</p> : ''}
-                    <div>
-                        {error.weight_max && <p>{error.weight_max}</p>}
-                    </div>
-                </div>
-                <div className="form-image">
-                    <label className="input-name" >Imagen: </label>
-                    <input
-                        className="input-image"
+                <form className="form" onSubmit={(e) => { handleSubmit(e) }} >
+                    <div className="form-all">
+                        <label className="input">Nombre: </label>
+                        <input 
+                        className="input_input"
                         type="text"
-                        placeholder="Url de la imagen "
-                        name='image'
-                        value={input.image}
-                        onChange={handleInput}
-                    />
-                    <div>
-                        {error.image && <p>{error.image}</p>}
+                            placeholder="Nombre de la raza "
+                            name='name'
+                            value={input.name.charAt(0).toUpperCase() + input.name.slice(1)}
+                            onChange={handleInput}
+                        />
+                        {input.name === '' ? <p className="ast">*</p> : ''}
                     </div>
-                </div>
-                <div className="form-all">
-                    <label className="input-life-name">Años de vida (desde): </label>
-                    <input type="text"
-                        placeholder="Años "
-                        name='life_span_min'
-                        value={input.life_span_min}
-                        onChange={handleInput}
-                    />
-                    {input.life_span_min === '' ? <p className="ast">*</p> : ''}
-                    {error.life_span_min && <p>{error.life_span_min}</p>}
-                </div>
-                <div className="form-all">
-                    <label className="input-life-name">Años de vida (hasta): </label>
-                    <input type="text"
-                        placeholder="Años"
-                        name='life_span_max'
-                        value={input.life_span_max}
-                        onChange={handleInput}
-                    />
-                    {input.life_span_max === '' ? <p className="ast">*</p> : ''}
-                    {error.life_span_max && <p>{error.life_span_max}</p>}
-                </div>
-                <div >
+                    <div className="form-all">
+                        <label className="input" >Altura mínima: </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            name='height_min'
+                            placeholder="centímetros"
+                            value={input.height_min}
+                            onChange={handleInput}
+                        />
+                        {input.height_min === '' ? <p className="ast">*</p> : ''}
+
+                        {error.height_min && <p className="error">{error.height_min}</p>}
+
+                    </div>
+                    <div className="form-all">
+                        <label className="input">Altura máxima: </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            name='height_max'
+                            placeholder="centímetros"
+                            value={input.height_max}
+                            onChange={handleInput}
+                        />
+                        {input.height_max === '' ? <p className="ast">*</p> : ''}
+
+                        {error.height_max && <p className="error">{error.height_max}</p>}
+
+                    </div>
+                    <div className="form-all">
+                        <label className="input" >Peso mínimo: </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            placeholder="Kgs "
+                            name='weight_min'
+                            value={input.weight_min}
+                            onChange={handleInput}
+                        />
+                        {input.weight_min === '' ? <p className="ast">*</p> : ''}
+
+                        {error.weight_min && <p className="error">{error.weight_min}</p>}
+
+                    </div>
+                    <div className="form-all">
+                        <label className="input" >Peso máximo: </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            placeholder="Kgs "
+                            name='weight_max'
+                            value={input.weight_max}
+                            onChange={handleInput}
+                        />
+                        {input.weight_max === '' ? <p className="ast">*</p> : ''}
+
+                        {error.weight_max && <p className="error">{error.weight_max}</p>}
+
+                    </div>
+                    <div className="form-image">
+                        <label className="input-name" >Imagen: </label>
+                        <input
+                            className="input-image"
+                            type="text"
+                            placeholder="Url de la imagen "
+                            name='image'
+                            value={input.image}
+                            onChange={handleInput}
+                        />
+
+                        {error.image && <p className="error">{error.image}</p>}
+
+                    </div>
+                    <div className="form-all">
+                        <label className="input-life-name">Años de vida (desde): </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            placeholder="Años "
+                            name='life_span_min'
+                            value={input.life_span_min}
+                            onChange={handleInput}
+                        />
+                        {input.life_span_min === '' ? <p className="ast">*</p> : ''}
+                        {error.life_span_min && <p className="error">{error.life_span_min}</p>}
+                    </div>
+                    <div className="form-all">
+                        <label className="input-life-name">Años de vida (hasta): </label>
+                        <input
+                        className="input_input"
+                         type="text"
+                            placeholder="Años"
+                            name='life_span_max'
+                            value={input.life_span_max}
+                            onChange={handleInput}
+                        />
+                        {input.life_span_max === '' ? <p className="ast">*</p> : ''}
+                        {error.life_span_max && <p className="error">{error.life_span_max}</p>}
+                    </div>
+
                     <div className="form-temps">
                         {input.temperaments === '' ? <p className="ast">*</p> : ''}
                         <span className="temps-name" >Temperamentos: </span>
@@ -241,9 +259,9 @@ export default function PostDog() {
                     </div>
                     <div className="temps-list">
                         <ul >
-                           
-                                <span>Temperamentos seleccionados: </span>
-                            
+
+                            <span>Temperamentos seleccionados: </span>
+
                             {
                                 input.temperaments.map((e) => {
                                     return <li className="list-temps" value={e} key={e}> {e} <button value={e} onClick={handleDelete} >X</button>  </li>
@@ -256,19 +274,15 @@ export default function PostDog() {
                         {
                             input.name === '' || input.height_min === '' || input.height_max === '' || input.weight_min === '' || input.weight_max === '' || input.name === '' || input.life_span_min === '' ||
                                 input.life_span_max === '' || input.temperaments.length === 0 ?
-                                <button type="submit" disabled={true} >Faltan datos por completar</button> :
-                                <button type="submit">Crear Raza</button>
+                                <button className="btn-form-falta" type="submit" disabled={true} >Faltan datos por completar</button> :
+                                <button className="btn-form" type="submit">Crear Raza</button>
                         }
 
                     </div>
-
-
+                </form>
+                <div className="volver">
+                    <Link to='/home'><button className="btn-form" >Volver al inicio</button></Link>
                 </div>
-
-
-            </form>
-            <div className="volver">
-                <Link to='/home'><button >Volver al inicio</button></Link>
             </div>
         </div>
     )

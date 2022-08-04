@@ -29,21 +29,21 @@ export default function DogDetail() {
     return (
 
         <div>
-            {
-                <div className="cont">
+            <div className="cont">
+                {
                     <div className="container">
-                        <h1>Raza: {dog.name} </h1>
+                        <h1 className="raza">Raza: {dog.name} </h1>
                         <img className="image" src={dog.image} alt="Imagen no disponible" />
-                        <h3>Altura:  {dog.height} cm  </h3>
-                        <h3>Peso: {dog.weight} Kgs </h3>
-                        <h3>Esperanza de vida: {dog.life_span} años </h3>
-                        <h3>Temperamentos: {temp ? temp : temp_api}</h3>
+                        <h3 className="h3-detail">Altura:  {dog.height} cm  </h3>
+                        <h3 className="h3-detail">Peso: {dog.weight} Kgs </h3>
+                        <h3 className="h3-detail">Esperanza de vida: {dog.life_span} años </h3>
+                        <h3 className="h3-detail">Temperamentos: {temp ? temp : temp_api}</h3>
                     </div>
-                </div>
 
-            }
-            <div className="volver-detail">
-            <Link to='/home'><button  >Volver al inicio</button></Link>
+                }
+                <div className="volver-detail">
+                    <Link to='/home'><button  >Volver al inicio</button></Link>
+                </div>
             </div>
         </div>
 

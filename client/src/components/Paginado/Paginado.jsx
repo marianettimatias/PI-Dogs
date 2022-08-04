@@ -9,12 +9,12 @@ export default function Paginado({ dogsPerPage, allDogs, paginado }) {
     }
     return (
         <nav className="nav-pag" >
-            <ul>
+            <ul className="ul" >
                 {
                     pageNumbers && pageNumbers.map(num => ( //mapeo cada uno de los numeros que tengo en pagNumber
                         <button className="btn-pag" 
                             key={num}>
-                            <a  onClick={() => paginado(num)}>{num}</a>
+                            <p className="num" onClick={() => paginado(num)}>{num}</p>
                         </button>
                     ))
                 }

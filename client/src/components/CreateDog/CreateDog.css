@@ -1,10 +1,18 @@
-.titulo{
+.cont-form {
+    height: 900px;
+}
+
+.head-titulo {
+    height: 15%;
+}
+
+.titulo {
     width: 600px;
-    height: 50px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-       text-align: center;
+    text-align: center;
+    font-size: 50px;
 }
 
 .ast {
@@ -17,19 +25,21 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 0 0 10%;
     width: 80%;
+    height: 60%;
 }
 
 .form-all {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
+    width: 100%;
     height: 35px;
-   margin: 0px;
+    margin-left: 70%;
     text-align: end;
 
 }
@@ -38,62 +48,163 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 10px;
-    margin: auto;
-    padding-right: 10px;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    gap: 15px;
+    margin-left: 70%;
 
 }
 
+.input {
+    font-size: 22px;
+}
 
 .input-name {
+    font-size: 22px;
     width: 150px;
     text-align: end;
     padding-right: 0px;
 
 }
 
-.input-life-name{
+.input_input {
+    width: 150px;
+    margin-right: 10px;
+    border-top: none;
+    border-right: none;
+    
+    border-radius: 0.2em;
+    padding-left: 0.3em;
+    outline: none;
+   font-family: 'Mouse Memoirs', sans-serif;
+   font-size: 18px;
+}
+
+.input-life-name {
+    font-size: 22px;
     width: 160px;
-    text-align: start;
+    text-align: end;
+    margin-right: 5px;
 }
 
 .form-temps {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
     height: 35px;
-    margin: auto;
-    
+    width: 100%;
+    margin-left: 73%;
+
 }
 
-.temps-name{
+.temps-name {
+    font-size: 22px;
     padding-right: 30px;
     text-align: end;
 }
 
-.input-image{
+.input-image {
     display: block;
-}
-
-.falta{
-   
-   display: flex;
-   justify-content: center;
-   
-}
-
-.volver{
-   
-   display: flex;
-   justify-content: center;
+    width: 150px;
+    margin-right: 10px;
+    border-top: none;
+    border-right: none;
     
+    border-radius: 0.2em;
+    padding-left: 0.3em;
+    outline: none;
+   font-family: 'Mouse Memoirs', sans-serif;
+   font-size: 18px;
 }
 
-.list-temps{
-    display:block;
+.falta {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.volver {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+.temps-list {
+    width: 100%;
+    font-size: 22px;
+    margin-left: 73%;
+}
+
+.list-temps {
+    font-size: 20px;
+    display: flex;
     text-align: center;
     margin: 5px;
+    gap: 15px;
+}
+
+.error {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+
+.btn-form {
+
+
+    width: 150px;
+    height: 60px;
+    appearance: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #7F8487;
+
+    margin: 4px;
+    transition: 0.4s;
+
+    color: #FFF;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 30px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-form:hover {
+    background-color: #8D8DAA;
+}
+
+.btn-form-falta {
+
+
+    width: 200px;
+    height: 80px;
+    appearance: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #7F8487;
+
+    margin: 4px;
+    transition: 0.4s;
+
+    color: #FFF;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 30px;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-form-falta:hover {
+    background-color: #8D8DAA;
 }

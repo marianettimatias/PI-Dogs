@@ -1,15 +1,40 @@
-.landing{
-  
+.landing {
   display: grid;
- justify-items: center;
-}
-.btn-landing{
- 
-  padding-top: 30px;
-
-}
-.dogs{
-  font-size: 60px;
+  justify-items: center;
 }
 
- 
+.btn_landing {
+
+
+  width: 180px;
+  height: 80px;
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background-color: #7F8487;
+
+  margin: 4px;
+  transition: 0.4s;
+
+  color: #FFF;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 46px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn_landing:hover {
+  background-color: #8D8DAA;
+}
+
+
+.dogs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 80px;
+  width: 250px;
+  height: 150px;
+  font-size: 120px;
+}
