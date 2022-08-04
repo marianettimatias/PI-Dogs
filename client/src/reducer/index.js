@@ -7,7 +7,9 @@ const initialState = {
 }
 
 function rootReducer(state = initialState, action) {
+
     switch (action.type) {
+
 
         case 'GET_DOGS':
             return {
@@ -120,11 +122,21 @@ function rootReducer(state = initialState, action) {
 
         case 'FILTER_BY_TEMPERAMENTS':
 
-            const filter_temp = action.payload === 'All' ? state.alldogs : state.alldogs.filter(e => e.temperaments.includes(action.payload))
+            const filterDogsByTemps =
+                action.payload === "All"
+                    ? state.alldogs
+                    : state.alldogs.filter((dog) => {
+                        if (Array.isArray(dog.temperaments)) {
+                            console.log('array', dog.temperaments.map(e => e.name))
+                            return dog.temperaments.map(e => e.name).includes(action.payload)
+                        } else {
+                            return dog.temperaments.includes(action.payload)
+                        }
+                    })
 
             return {
                 ...state,
-                dogs: action.payload === 'All' ? state.alldogs : filter_temp
+                dogs: filterDogsByTemps
             }
         default: return state;
     }

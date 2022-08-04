@@ -37,6 +37,7 @@ export default function Home() {
   function handleClick(e) {
     e.preventDefault();
     dispatch(getDogs());
+    setCurrentPage(1);
   }
 
   function handleByWeight(e) {

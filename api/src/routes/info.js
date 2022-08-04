@@ -14,8 +14,8 @@ const getApi = async () => {
             weight: dogs.weight.metric,
             life_span: dogs.life_span,
             image: dogs.image.url,
-            temperaments: dogs.temperament?dogs.temperament:'Sin temperamento asociado'
-           
+            temperaments: dogs.temperament ? dogs.temperament : 'Sin temperamento asociado'
+
         }
     });
     return api_info;
@@ -28,11 +28,11 @@ const getdb = async () => {
             attributes: ['name'],
             through: {
                 attributes: [],
-                
+
             },
         }
     })
-      
+
     return datainfo;
 }
 
