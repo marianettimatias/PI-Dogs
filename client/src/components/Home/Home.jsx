@@ -90,7 +90,7 @@ export default function Home() {
               <h3 className="h3-home">Filtrar por temperamento</h3>
             </div>
             <div className="filter-temps-select">
-              <select className="select-temps" onChange={handleTemperaments}>
+              <select className="select-nav" onChange={handleTemperaments}>
                 <option value="All">Todos</option>
                 {
                   temps.map(temp => {
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <div className="sort-name">
             <h3 className="h3-home" >Ordenar Alfabéticamente</h3>
-            <select className="select-name" onChange={handleByName}>
+            <select className="select-nav" onChange={handleByName}>
               <option value="asc">A-Z</option>
               <option value="desc">Z-A</option>
             </select>
@@ -110,7 +110,7 @@ export default function Home() {
 
           <div className="sort-weight">
             <h3 className="h3-home" >Ordenar por peso</h3>
-            <select className="select-weight" onChange={(e) => { handleByWeight(e) }}>
+            <select className="select-nav" onChange={(e) => { handleByWeight(e) }}>
               <option value="asc">Ascendente</option>
               <option value="desc">Descendente</option>
             </select>
@@ -118,7 +118,7 @@ export default function Home() {
 
           <div className="sort-created">
             <h3 className="h3-home" >Razas: creadas/existentes</h3>
-            <select className="select-created" onChange={(e) => { handleCreate(e) }}>
+            <select className="select-nav" onChange={(e) => { handleCreate(e) }}>
               <option value="Todas">Todas</option>
               <option value="createdInDb">Creadas</option>
               <option value="Existentes">Existentes</option>

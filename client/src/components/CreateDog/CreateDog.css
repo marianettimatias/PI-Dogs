@@ -75,12 +75,12 @@
     margin-right: 10px;
     border-top: none;
     border-right: none;
-    
+    border-width: 1px;
     border-radius: 0.2em;
     padding-left: 0.3em;
     outline: none;
-   font-family: 'Mouse Memoirs', sans-serif;
-   font-size: 18px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 18px;
 }
 
 .input-life-name {
@@ -96,7 +96,7 @@
     justify-content: flex-start;
     align-content: center;
     align-items: center;
-    height: 35px;
+    height: 40px;
     width: 100%;
     margin-left: 73%;
 
@@ -114,12 +114,12 @@
     margin-right: 10px;
     border-top: none;
     border-right: none;
-    
+    border-width: 1px;
     border-radius: 0.2em;
     padding-left: 0.3em;
     outline: none;
-   font-family: 'Mouse Memoirs', sans-serif;
-   font-size: 18px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 18px;
 }
 
 .falta {
@@ -138,16 +138,41 @@
 
 .temps-list {
     width: 100%;
+    height: 150px;
     font-size: 22px;
     margin-left: 73%;
+    list-style: none;
+}
+
+.select {
+    font-family: 'Mouse Memoirs', sans-serif;
+    background: transparent;
+    font-size: 22px;
+    height: 40px;
+    padding: 5px;
+    width: 250px;
+    border-top: none;
+    border-right: none;
+    border-width: 1px;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+.select:focus {
+    outline: none;
 }
 
 .list-temps {
-    font-size: 20px;
+    height: 50px;
+    width: 600px;
+    font-size: 22px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     text-align: center;
     margin: 5px;
     gap: 15px;
+    list-style: none;
 }
 
 .error {
@@ -194,7 +219,9 @@
     cursor: pointer;
     background-color: #7F8487;
 
+
     margin: 4px;
+    margin-bottom: 20px;
     transition: 0.4s;
 
     color: #FFF;
@@ -207,4 +234,10 @@
 
 .btn-form-falta:hover {
     background-color: #8D8DAA;
+}
+
+.elimina{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

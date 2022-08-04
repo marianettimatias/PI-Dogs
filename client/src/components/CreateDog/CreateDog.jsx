@@ -130,9 +130,9 @@ export default function PostDog() {
                 <form className="form" onSubmit={(e) => { handleSubmit(e) }} >
                     <div className="form-all">
                         <label className="input">Nombre: </label>
-                        <input 
-                        className="input_input"
-                        type="text"
+                        <input
+                            className="input_input"
+                            type="text"
                             placeholder="Nombre de la raza "
                             name='name'
                             value={input.name.charAt(0).toUpperCase() + input.name.slice(1)}
@@ -143,8 +143,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input" >Altura mínima: </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             name='height_min'
                             placeholder="centímetros"
                             value={input.height_min}
@@ -158,8 +158,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input">Altura máxima: </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             name='height_max'
                             placeholder="centímetros"
                             value={input.height_max}
@@ -173,8 +173,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input" >Peso mínimo: </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             placeholder="Kgs "
                             name='weight_min'
                             value={input.weight_min}
@@ -188,8 +188,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input" >Peso máximo: </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             placeholder="Kgs "
                             name='weight_max'
                             value={input.weight_max}
@@ -217,8 +217,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input-life-name">Años de vida (desde): </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             placeholder="Años "
                             name='life_span_min'
                             value={input.life_span_min}
@@ -230,8 +230,8 @@ export default function PostDog() {
                     <div className="form-all">
                         <label className="input-life-name">Años de vida (hasta): </label>
                         <input
-                        className="input_input"
-                         type="text"
+                            className="input_input"
+                            type="text"
                             placeholder="Años"
                             name='life_span_max'
                             value={input.life_span_max}
@@ -242,9 +242,8 @@ export default function PostDog() {
                     </div>
 
                     <div className="form-temps">
-                        {input.temperaments === '' ? <p className="ast">*</p> : ''}
                         <span className="temps-name" >Temperamentos: </span>
-                        <select onChange={(e) => { handleSelect(e) }}  >
+                        <select className="select" onChange={(e) => { handleSelect(e) }}  >
 
                             {
                                 alltemperaments.map(temp => {
@@ -255,18 +254,22 @@ export default function PostDog() {
                             }
 
                         </select>
-                        <p className="ast">*</p>
+                        {input.temperaments.length === 0 ? <p className="ast">*</p> : ''}
+
                     </div>
                     <div className="temps-list">
-                        <ul >
+                        <ul  >
 
                             <span>Temperamentos seleccionados: </span>
-
-                            {
-                                input.temperaments.map((e) => {
-                                    return <li className="list-temps" value={e} key={e}> {e} <button value={e} onClick={handleDelete} >X</button>  </li>
-                                })
-                            }
+                            <div className="list-temps">
+                                {
+                                    input.temperaments.map((e) => {
+                                        return <li value={e} key={e}> {e}
+                                            <button className="elimina" value={e} onClick={handleDelete} >X</button>
+                                        </li>
+                                    })
+                                }
+                            </div>
                         </ul>
                         <p className="ast">* Campos obligatorios</p>
                     </div>
