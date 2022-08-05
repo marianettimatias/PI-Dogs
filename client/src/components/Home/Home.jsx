@@ -18,9 +18,9 @@ export default function Home() {
 
   const [currentPage, setCurrentPage] = useState(1); //estado con paginba actual y estado que setea pagina actual
   const [dogsPerPage, setDogsPerPage] = useState(8); //seteo personajes por página
-  const indexOfLastDog = currentPage * dogsPerPage
-  const indexOfFirstDog = indexOfLastDog - dogsPerPage
-  const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
+  const LastDog = currentPage * dogsPerPage
+  const FirstDog = LastDog - dogsPerPage
+  const currentDogs = allDogs.slice(FirstDog, LastDog);
 
   const [orden, setOrden] = useState('');
 
@@ -155,6 +155,7 @@ export default function Home() {
           dogsPerPage={dogsPerPage}
           allDogs={allDogs.length} // .length porque necesito un valor numerico
           paginado={paginado}
+          currentPage={currentPage}
         />
       </div>
 
