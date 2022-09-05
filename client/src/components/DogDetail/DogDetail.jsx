@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
-import { getDogDetail } from "../../actions";
+import { getDogDetail, getCleanDetail } from "../../actions";
 import './DogDetail.css'
 
 
@@ -17,6 +17,7 @@ console.log('detail', dog)
 
     useEffect(() => {
         dispatch(getDogDetail(id))
+        dispatch(getCleanDetail())
     }, [dispatch, id])
 
     if (Array.isArray(dog.temperaments)) {

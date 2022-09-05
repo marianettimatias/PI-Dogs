@@ -37,6 +37,13 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 detail: action.payload
             }
+        
+        case'CLEAN_DETAIL':
+        return{
+            ...state,
+            detail:[]
+        }
+
 
         case 'GET_TEMPERAMENTS':
             return {

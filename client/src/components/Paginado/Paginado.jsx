@@ -21,7 +21,7 @@ export default function Paginado({ dogsPerPage, allDogs, paginado, currentPage }
         <nav className="nav-pag" >
             {
                 currentPage === 1 ?
-                    <button disabled>Prev</button> :
+                    <button className="btn-pag" disabled>Prev</button> :
                     <button className="btn-pag" value='prev' onClick={(e) => handleClick(e)} >Prev</button>
             }
             <ul className="ul" >
@@ -36,7 +36,7 @@ export default function Paginado({ dogsPerPage, allDogs, paginado, currentPage }
             </ul>
             {
                 currentPage === Math.ceil(allDogs / dogsPerPage) ?
-                    <button disabled>Next</button> :
+                    <button className="btn-pag" disabled>Next</button> :
                     <button className="btn-pag" value='next' onClick={(e) => handleClick(e)}>Next</button>
             }
         </nav>
