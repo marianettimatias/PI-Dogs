@@ -81,7 +81,11 @@ export default function Home() {
             Todas las razas
           </button>
           <div >
-            <Link to='/dogs'> <h3 className="h3-crear"> Crea tu raza!</h3></Link>
+            <Link to='/dogs'>
+              <button className="btn-crea">
+                Crea tu raza!
+              </button>
+            </Link>
           </div>
         </div>
 

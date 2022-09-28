@@ -24,7 +24,9 @@ export default function DogCard({ id, name, image, temperaments, weight }) {
           <h4 className="h4">Temperamentos: {temp ? temp : temp_api}</h4>
         </div>
         <div className="link-detalle">
-          <Link to={'/dogs/' + id}><p className="p">Detalles de la raza</p></Link>
+          <Link to={'/dogs/' + id}> 
+          <button className="btn">Detalles de la raza</button>
+           </Link>
         </div>
 
 
